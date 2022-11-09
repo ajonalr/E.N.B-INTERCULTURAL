@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\GradoController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UnidadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,19 +27,35 @@ Auth::routes();
 
 
 
-Route::group(['prefix' => "admin", 'as' => 'admin.', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth', 'AdminPanelAccess']], function () {
+Route::group(['prefix' => "admin", 'middleware' => ['auth', 'AdminPanelAccess']], function () {
 
-    Route::get('/', 'HomeController@index')->name('home');
-
-    Route::resource('/users', 'UserController');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::resource('/users', UserController::class);
     Route::resource('/roles', 'RoleController');
     Route::resource('/permissions', 'PermissionController')->except(['show']);
-});
 
 
-Route::group(['prefix' => "product", 'middleware' => ['auth', 'AdminPanelAccess']], function () {
 
-    Route::get('index', [ProductController::class, 'index'])->name('product.index');
-    Route::get('store', [ProductController::class, 'store'])->name('product.store');
-    Route::get('show/{id}', [ProductController::class, 'show'])->name('product.show')->middleware('can:product_show');
+    Route::controller(UnidadController::class)->prefix('unidad')->group(function () {
+        Route::get('index', 'index')->name('unidad.index');
+        Route::get('show/{id}', 'show')->name('unidad.show');
+        Route::get('edit/{id}', 'edit')->name('unidad.edit');
+        Route::get('registro', 'create')->name('unidad.create');
+        Route::post('store', 'store')->name('unidad.store');
+        Route::put('update/{id}', 'update')->name('unidad.update');
+        Route::delete('delete/{id}', 'destroy')->name('unidad.destroy');
+    });
+
+
+    Route::controller(GradoController::class)->prefix('grado')->group(function () {
+        Route::get('index', 'index')->name('grados.index');
+        Route::get('show/{id}', 'show')->name('grados.show');
+        Route::get('edit/{id}', 'edit')->name('grados.edit');
+        Route::get('registro', 'create')->name('grados.create');
+        Route::post('store', 'store')->name('grados.store');
+        Route::put('update/{id}', 'update')->name('grados.update');
+        Route::delete('delete/{id}', 'destroy')->name('grados.destroy');
+    });
+
+
 });

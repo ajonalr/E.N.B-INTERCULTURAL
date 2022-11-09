@@ -13,7 +13,7 @@
                         @can('admin_panel_access')
                         <!-- dashboard-->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin')) is_active @endif" href="{{ route('admin.home') }}" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin')) is_active @endif" href="{{ route('home') }}" aria-expanded="false">
                                 <i class="mr-3 fas fa-tachometer-alt fa-fw" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
@@ -36,7 +36,7 @@
                             ">
                                 @can('users_access')
                                 <li class="sidebar-item">
-                                    <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/users') || request()->is('admin/users/*')) is_active @endif" href="{{ route('admin.users.index') }}" aria-expanded="false">
+                                    <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/users') || request()->is('admin/users/*')) is_active @endif" href="{{ route('users.index') }}" aria-expanded="false">
                                         <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
                                         <span class="hide-menu">Users</span>
                                     </a>
@@ -45,7 +45,7 @@
 
                                 @can('roles_access')
                                 <li class="sidebar-item">
-                                    <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/roles') || request()->is('admin/roles/*')) is_active @endif" href="{{ route('admin.roles.index') }}" aria-expanded="false">
+                                    <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/roles') || request()->is('admin/roles/*')) is_active @endif" href="{{ route('roles.index') }}" aria-expanded="false">
                                         <i class="mr-3 mdi mdi-star" aria-hidden="false"></i>
                                         <span class="hide-menu">Roles</span>
                                     </a>
@@ -54,7 +54,7 @@
 
                                 @can('permissions_access')
                                 <li class="sidebar-item">
-                                    <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/permissions') || request()->is('admin/permissions/*')) is_active @endif" href="{{ route('admin.permissions.index') }}" aria-expanded="false">
+                                    <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/permissions') || request()->is('admin/permissions/*')) is_active @endif" href="{{ route('permissions.index') }}" aria-expanded="false">
                                         <i class="mr-3 mdi mdi-key" aria-hidden="false"></i>
                                         <span class="hide-menu">Permissions</span>
                                     </a>
@@ -63,22 +63,62 @@
                             </ul>
                         </li>
                         @endcanany
-                        <li class="sidebar-item">
 
+                        <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
                                 <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
-                                <span class="hide-menu">Productos</span>
+                                <span class="hide-menu">GRADO</span>
                             </a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('product.index')}}">
+                                    <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('grados.index')}}">
                                         <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
-                                        <span class="hide-menu">Products</span>
+                                        <span class="hide-menu">LISTADO</span>
                                     </a>
                                 </li>
-                                
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('grados.create')}}">
+                                        <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                        <span class="hide-menu">REGISTRO</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
+                                        <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                        <span class="hide-menu">REPORTE</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
+
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
+                                <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
+                                <span class="hide-menu">UNIDAD</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('unidad.index')}}">
+                                        <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                        <span class="hide-menu">LISTADO</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('unidad.create')}}">
+                                        <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                        <span class="hide-menu">REGISTRO</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
+                                        <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                        <span class="hide-menu">REPORTE</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
 
                     </ul>
 
