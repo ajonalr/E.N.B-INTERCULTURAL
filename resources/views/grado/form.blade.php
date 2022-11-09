@@ -11,7 +11,6 @@
             {{ Form::text('seccio', $grado->seccio, ['class' => 'form-control' . ($errors->has('seccio') ? ' is-invalid' : ''), 'placeholder' => 'Seccio']) }}
             {!! $errors->first('seccio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">Submit</button>
