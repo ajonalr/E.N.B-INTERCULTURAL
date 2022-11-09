@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\GradoController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\SecretariumController;
 use App\Http\Controllers\UnidadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +58,27 @@ Route::group(['prefix' => "admin", 'middleware' => ['auth', 'AdminPanelAccess']]
         Route::put('update/{id}', 'update')->name('grados.update');
         Route::delete('delete/{id}', 'destroy')->name('grados.destroy');
     });
+
+    Route::controller(ProfesorController::class)->prefix('profesor')->group(function () {
+        Route::get('index', 'index')->name('profesors.index');
+        Route::get('show/{id}', 'show')->name('profesors.show');
+        Route::get('edit/{id}', 'edit')->name('profesors.edit');
+        Route::get('registro', 'create')->name('profesors.create');
+        Route::post('store', 'store')->name('profesors.store');
+        Route::put('update/{id}', 'update')->name('profesors.update');
+        Route::delete('delete/{id}', 'destroy')->name('profesors.destroy');
+    });
+
+    Route::controller(SecretariumController::class)->prefix('secretaria')->group(function () {
+        Route::get('index', 'index')->name('secretaria.index');
+        Route::get('show/{id}', 'show')->name('secretaria.show');
+        Route::get('edit/{id}', 'edit')->name('secretaria.edit');
+        Route::get('registro', 'create')->name('secretaria.create');
+        Route::post('store', 'store')->name('secretaria.store');
+        Route::put('update/{id}', 'update')->name('secretaria.update');
+        Route::delete('delete/{id}', 'destroy')->name('secretaria.destroy');
+    });
+
 
 
 });
