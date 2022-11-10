@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\GradoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfesorController;
@@ -80,5 +81,13 @@ Route::group(['prefix' => "admin", 'middleware' => ['auth', 'AdminPanelAccess']]
     });
 
 
-
+    Route::controller(EstudianteController::class)->prefix('estudiantes')->group(function () {
+        Route::get('index', 'index')->name('estudiantes.index');
+        Route::get('show/{id}', 'show')->name('estudiantes.show');
+        Route::get('edit/{id}', 'edit')->name('estudiantes.edit');
+        Route::get('registro', 'create')->name('estudiantes.create');
+        Route::post('store', 'store')->name('estudiantes.store');
+        Route::put('update/{id}', 'update')->name('estudiantes.update');
+        Route::delete('delete/{id}', 'destroy')->name('estudiantes.destroy');
+    });
 });
