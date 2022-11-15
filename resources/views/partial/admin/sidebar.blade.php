@@ -23,8 +23,8 @@
 
                     <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
 
-                        <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
-                        <span class="hide-menu">Users Management</span>
+                       <i class="fa fa-list" aria-hidden="true"></i>
+                        <span class="hide-menu">USUARIOS</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level
                                 @if(request()->is('admin/users') || request()->is('admin/users/*')) in @endif
@@ -34,28 +34,28 @@
                         @can('users_access')
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/users') || request()->is('admin/users/*')) is_active @endif" href="{{ route('users.index') }}" aria-expanded="false">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">Users</span>
                             </a>
                         </li>
                         @endcan
 
                         @can('roles_access')
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/roles') || request()->is('admin/roles/*')) is_active @endif" href="{{ route('roles.index') }}" aria-expanded="false">
                                 <i class="mr-3 mdi mdi-star" aria-hidden="false"></i>
                                 <span class="hide-menu">Roles</span>
                             </a>
-                        </li>
+                        </li> -->
                         @endcan
 
                         @can('permissions_access')
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark  @if(request()->is('admin/permissions') || request()->is('admin/permissions/*')) is_active @endif" href="{{ route('permissions.index') }}" aria-expanded="false">
                                 <i class="mr-3 mdi mdi-key" aria-hidden="false"></i>
                                 <span class="hide-menu">Permissions</span>
                             </a>
-                        </li>
+                        </li> -->
                         @endcan
                     </ul>
                 </li>
@@ -63,25 +63,52 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
-                        <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
+                       <i class="fa fa-list" aria-hidden="true"></i>
                         <span class="hide-menu">GRADO</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('grados.index')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">LISTADO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('grados.create')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REGISTRO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
+                                <span class="hide-menu">REPORTE</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
+                       <i class="fa fa-list" aria-hidden="true"></i>
+                        <span class="hide-menu">CURSOS</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('curos.index')}}">
+                                
+                                <span class="hide-menu">LISTADO</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('curos.create')}}">
+                                
+                                <span class="hide-menu">REGISTRO</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
+                                
                                 <span class="hide-menu">REPORTE</span>
                             </a>
                         </li>
@@ -91,51 +118,51 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
-                        <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
+                       <i class="fa fa-list" aria-hidden="true"></i>
                         <span class="hide-menu">UNIDAD</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('unidad.index')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">LISTADO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('unidad.create')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REGISTRO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REPORTE</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <!-- <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
-                        <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
+                       <i class="fa fa-list" aria-hidden="true"></i>
                         <span class="hide-menu">PROFESORES</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('profesors.index')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">LISTADO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('profesors.create')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REGISTRO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REPORTE</span>
                             </a>
                         </li>
@@ -143,51 +170,51 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
-                        <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
+                       <i class="fa fa-list" aria-hidden="true"></i>
                         <span class="hide-menu">SECRETARIA</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('secretaria.index')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">LISTADO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('secretaria.create')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REGISTRO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REPORTE</span>
                             </a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark selected" href="javascript:void(0)" aria-expanded="false">
-                        <i class="mr-3 mdi mdi-account" aria-hidden="true"></i>
+                       <i class="fa fa-list" aria-hidden="true"></i>
                         <span class="hide-menu">ESTUDIANTES</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('estudiantes.index')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">LISTADO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="{{route('estudiantes.create')}}">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REGISTRO</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark " aria-expanded="false" href="#">
-                                <i class="mr-3 mdi mdi-account-multiple" aria-hidden="true"></i>
+                                
                                 <span class="hide-menu">REPORTE</span>
                             </a>
                         </li>

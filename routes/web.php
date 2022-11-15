@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CuroController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\GradoController;
 use App\Http\Controllers\ProductController;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -90,4 +91,15 @@ Route::group(['prefix' => "admin", 'middleware' => ['auth', 'AdminPanelAccess']]
         Route::put('update/{id}', 'update')->name('estudiantes.update');
         Route::delete('delete/{id}', 'destroy')->name('estudiantes.destroy');
     });
+
+    Route::controller(CuroController::class)->prefix('cursos')->group(function () {
+        Route::get('index', 'index')->name('curos.index');
+        Route::get('show/{id}', 'show')->name('curos.show');
+        Route::get('edit/{id}', 'edit')->name('curos.edit');
+        Route::get('registro', 'create')->name('curos.create');
+        Route::post('store', 'store')->name('curos.store');
+        Route::put('update/{id}', 'update')->name('curos.update');
+        Route::delete('delete/{id}', 'destroy')->name('curos.destroy');
+    });
+
 });
