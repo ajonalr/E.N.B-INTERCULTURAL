@@ -9,7 +9,7 @@
                 <option value="{{$g->id}}">{{$g->nombre}} / {{$g->seccio}}</option>
                 @endforeach
 
-                @if (isset($curo))
+                @if (isset($curo->grado_id))
                 <option value="{{$g->grado_id}}">{{$curo->grado->nombre}} / {{$curo->grado->seccio}}</option>
                 @endif
 

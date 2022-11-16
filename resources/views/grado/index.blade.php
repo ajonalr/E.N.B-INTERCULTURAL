@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Nombre</th>
-										<th>Seccio</th>
+										<th>Seccion</th>
 
                                         <th></th>
                                     </tr>

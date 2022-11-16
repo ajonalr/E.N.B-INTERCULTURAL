@@ -6,7 +6,7 @@
         <div class="card-header">{{ __('Edit User') }}</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('admin.users.update', $user->id) }}">
+            <form method="POST" action="{{ route('users.update', $user->id) }}">
                 @csrf
                 @method('PUT')
                 <div class="form-group row">

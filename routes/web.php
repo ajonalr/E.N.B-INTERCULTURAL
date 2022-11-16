@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\SecretariumController;
 use App\Http\Controllers\UnidadController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// rauta para ejecutar comando artisan desde la web
+Route::get('artisan/{comando}/{contra}', function ($comando, $contra) {
+    if ($contra === 'Taylor110eAA.') {
+        // ejemplo www.decodev.net/cmd/migrate
+        Artisan::call($comando);
+        dd(Artisan::output());
+    } else {
+        echo 'NO ACCESO';
+    }
+});
 
 
 Route::group(['prefix' => "admin", 'middleware' => ['auth', 'AdminPanelAccess']], function () {

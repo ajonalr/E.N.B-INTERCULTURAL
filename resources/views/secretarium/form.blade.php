@@ -22,6 +22,12 @@
             {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
+        <div class="form-group">
+          <label for="">PASSWORD</label>
+          <input type="password" class="form-control" name="password" >
+
+        </div>
+
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">Submit</button>

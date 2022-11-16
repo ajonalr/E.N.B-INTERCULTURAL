@@ -25,7 +25,7 @@
                             {{ $grado->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Seccio:</strong>
+                            <strong>Seccion:</strong>
                             {{ $grado->seccio }}
                         </div>
 

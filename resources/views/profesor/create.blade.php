@@ -21,6 +21,8 @@
 
                             @include('profesor.form')
 
+                           
+
                         </form>
                     </div>
                 </div>

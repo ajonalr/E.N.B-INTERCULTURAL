@@ -1,6 +1,6 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-        
+
         <div class="form-group">
             {{ Form::label('nombre') }}
             {{ Form::text('nombre', $profesor->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
@@ -26,6 +26,12 @@
             {{ Form::text('email', $profesor->email, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Email']) }}
             {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
+        <div class="form-group">
+            <label for="">PASSWORD: </label>
+            <input type="text" class="form-control" name="password">
+        </div>
+
 
     </div>
     <div class="box-footer mt20">

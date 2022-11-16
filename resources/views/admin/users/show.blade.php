@@ -7,7 +7,7 @@
 
         <div class="card-body">
 
-            <a href="{{ route('admin.users.index') }}" class="btn btn-light">Back to List</a>
+            <a href="{{ route('users.index') }}" class="btn btn-light">Back to List</a>
 
             <br /><br />
 

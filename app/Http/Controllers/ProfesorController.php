@@ -43,6 +43,9 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
+
+        // $request->password = '123123';
+
         Profesor::create($request->all());
 
         return back();

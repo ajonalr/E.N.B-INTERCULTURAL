@@ -7,7 +7,7 @@
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('seccio') }}
+            {{ Form::label('seccion') }}
             {{ Form::text('seccio', $grado->seccio, ['class' => 'form-control' . ($errors->has('seccio') ? ' is-invalid' : ''), 'placeholder' => 'Seccio']) }}
             {!! $errors->first('seccio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
